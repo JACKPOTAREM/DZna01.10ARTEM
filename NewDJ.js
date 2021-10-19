@@ -79,7 +79,7 @@ console.log(userInfo6["likes js"]); //// Задача 7. Записано был
 // let user7 = userInfo7;
 // user7.name = "Лена";
 // delete Object.propertyName
-// console.log(userInfo7); //// Задача 8.
+// console.log(userInfo7); //// Задача 8..
 
 
 
