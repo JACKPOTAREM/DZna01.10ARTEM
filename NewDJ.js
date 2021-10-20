@@ -82,5 +82,58 @@ console.log(userInfo6["likes js"]); //// Задача 7. Записано был
 // console.log(userInfo7); //// Задача 8..
 
 
+let infoUser = {
+    name: "Артём",
+    surname: "Иващенко",
+    location: {
+        city: "Kharkov",
+        postIndex: "61001"
+    }
+}
+function showAllkeys() {
+    Object.getOwnPropertyNames(infoUser).forEach(key => {
+        console.log(`${key}`);
+    });
+}
+showAllkeys.call(infoUser);
+function showAllinfo() {
+    console.log(`NAME: ${this.name}, SURNAME: ${this.surname}`);
+}
+function showAllinfoCity() {
+    console.log(`City: ${this.city}, PostIndex: ${this.postIndex}`);
+}
+showAllinfo.call(infoUser);
+showAllinfoCity.call(infoUser.location); ///// Аналог Object.values() and Object.keys() maybe
 
 
+///////////////////////////////////////////////////////////////////////
+function Animal (name, food, country) {
+    return {
+        name,
+        food,
+        country,
+    }
+}
+let cow = new Animal ("cow", "grass", "Ukraine");
+let dog = new Animal ("dog","meat","Ukraine");
+let tiger = new Animal ("Tiger","meat","Africa");
+let lion = new Animal ("lion","meat","Africa");
+let girafe = new Animal ("girafe","grass","Africa");
+let farm = [cow, dog, tiger, lion, girafe];
+let eats = farm.filter(function (Animals) {
+    return Animals.food === "grass";
+});
+console.log(eats);
+let eats2 = farm.filter(function (Animals) {
+    return Animals.food === "meat";
+});
+console.log(eats2);
+let live = farm.filter(function (Amimals) {
+    return Amimals.country === "Africa";
+});
+console.log(live);
+let live2 = farm.filter(function (Amimals) {
+    return Amimals.country === "Ukraine";
+});
+console.log(live2);
+//////////////////////////////////////////////// Задача ферма
